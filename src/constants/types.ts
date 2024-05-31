@@ -1,5 +1,7 @@
 // Auth Type
 
+import { FieldErrors, FieldValues, UseFormRegister } from "react-hook-form";
+
 export type AuthType = {
   children: React.ReactNode;
 };
@@ -12,6 +14,16 @@ export type UserRegistrationProps = {
   password: string;
   confirmPassword: string;
   otp: string;
+};
+
+export type UserRegistrationFormProps = {
+  id: string;
+  type: "email" | "text" | "password";
+  inputType: "select" | "input";
+  options?: { value: string; label: string; id: string }[];
+  label?: string;
+  placeholder: string;
+  name: string;
 };
 
 export type UserLoginProps = {
@@ -136,5 +148,40 @@ export type AppointmentProps = {
       }[]
     | undefined;
 };
+
+export type FormGeneratorProps = {
+  type: "text" | "email" | "password";
+  inputType: "select" | "input" | "textarea";
+  options?: { value: string; label: string; id: string }[];
+  label?: string;
+  placeholder: string;
+  register: UseFormRegister<any>;
+  name: string;
+  errors: FieldErrors<FieldValues>;
+  lines?: number;
+  form?: string;
+  defaultValue?: string;
+};
+
+export type AccountDetailsFormProps = {
+  register: UseFormRegister<FieldValues>;
+  errors: FieldErrors<FieldValues>;
+};
+
+export type UserTypeCardProps = {
+  value: string;
+  title: string;
+  text: string;
+  register: UseFormRegister<FieldValues>;
+  userType: "owner" | "student";
+  setUserType: React.Dispatch<React.SetStateAction<"owner" | "student">>;
+};
+
+export type TypeSelectionFormProps = {
+  register: UseFormRegister<FieldValues>;
+  userType: "owner" | "student";
+  setUserType: React.Dispatch<React.SetStateAction<"owner" | "student">>;
+};
+
 // End Components type
 //-----------------------------------------------------------

@@ -8,7 +8,7 @@ import { AuthType } from "@/constants/types";
 const Layout = async ({ children }: AuthType) => {
   const user = await currentUser();
 
-  if (!user) redirect("/");
+  if (user) redirect("/");
 
   return (
     <div className="h-screen flex w-full justify-center">
@@ -48,3 +48,5 @@ const Layout = async ({ children }: AuthType) => {
     </div>
   );
 };
+
+export default Layout;
