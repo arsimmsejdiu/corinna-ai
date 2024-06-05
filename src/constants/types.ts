@@ -276,5 +276,14 @@ export type ModalProps = {
   logo?: string;
 };
 
+export type SubscriptionCardProps = {
+  title: string;
+  description: string;
+  price: string;
+  onPayment(payment: string): void;
+  payment: string;
+  id: string;
+};
+
 // End Components type
 //-----------------------------------------------------------
