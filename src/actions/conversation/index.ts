@@ -29,7 +29,6 @@ export const onToggleRealTime = async (id: string, state: boolean) => {
     }
   } catch (error) {
     console.log("[ON_TOGGLE_REAL_TIME] -> ", error);
-    return new NextResponse("Internal Error", { status: 500 });
   }
 };
 
@@ -48,7 +47,6 @@ export const onGetConversationMode = async (id: string) => {
     return mode;
   } catch (error) {
     console.log("[ON_GET_CONVERSATION_MODE]", error);
-    return new NextResponse("Internal Error", { status: 500 });
   }
 };
 

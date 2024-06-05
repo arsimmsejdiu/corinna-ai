@@ -183,5 +183,89 @@ export type TypeSelectionFormProps = {
   setUserType: React.Dispatch<React.SetStateAction<"owner" | "student">>;
 };
 
+export type TabsProps = {
+  triggers: {
+    label: string;
+    icon?: JSX.Element;
+  }[];
+  children: React.ReactNode;
+  className?: string;
+  button?: JSX.Element;
+};
+
+export type SidebarProps = {
+  domains:
+    | {
+        id: string;
+        name: string;
+        icon: string;
+      }[]
+    | null
+    | undefined;
+};
+
+export type MaxMenuProps = {
+  onExpand(): void;
+  current: string;
+  onSignOut(): void;
+  domains:
+    | {
+        id: string;
+        name: string;
+        icon: string | null;
+      }[]
+    | null
+    | undefined;
+};
+
+export type MenuItemProps = {
+  size: "max" | "min";
+  label: string;
+  icon: JSX.Element;
+  path?: string;
+  current?: string;
+  onSignOut?(): void;
+};
+
+export type DomainMenuProps = {
+  min?: boolean;
+  domains:
+    | {
+        id: string;
+        name: string;
+        icon: string | null;
+      }[]
+    | null
+    | undefined;
+};
+
+export type MinMenuProps = {
+  onShrink(): void;
+  current: string;
+  onSignOut(): void;
+  domains:
+    | {
+        id: string;
+        name: string;
+        icon: string | null;
+      }[]
+    | null
+    | undefined;
+};
+
+export type UploadButtonProps = {
+  register: UseFormRegister<any>
+  errors: FieldErrors<FieldValues>
+  label: string
+}
+
+export type SideSheetProps = {
+  trigger: React.ReactNode
+  title: string
+  description: string
+  children: React.ReactNode
+  className?: string
+}
+
 // End Components type
 //-----------------------------------------------------------
