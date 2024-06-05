@@ -254,18 +254,27 @@ export type MinMenuProps = {
 };
 
 export type UploadButtonProps = {
-  register: UseFormRegister<any>
-  errors: FieldErrors<FieldValues>
-  label: string
-}
+  register: UseFormRegister<any>;
+  errors: FieldErrors<FieldValues>;
+  label: string;
+};
 
 export type SideSheetProps = {
-  trigger: React.ReactNode
-  title: string
-  description: string
-  children: React.ReactNode
-  className?: string
-}
+  trigger: React.ReactNode;
+  title: string;
+  description: string;
+  children: React.ReactNode;
+  className?: string;
+};
+
+export type ModalProps = {
+  trigger: React.ReactNode;
+  children: React.ReactNode;
+  title: string;
+  description: string;
+  type?: "Integration";
+  logo?: string;
+};
 
 // End Components type
 //-----------------------------------------------------------
