@@ -1,6 +1,11 @@
 // Auth Type
 
-import { FieldErrors, FieldValues, UseFormRegister } from "react-hook-form";
+import {
+  FieldErrors,
+  FieldValues,
+  UseFormRegister,
+  UseFormSetValue,
+} from "react-hook-form";
 
 export type AuthType = {
   children: React.ReactNode;
@@ -283,6 +288,52 @@ export type SubscriptionCardProps = {
   onPayment(payment: string): void;
   payment: string;
   id: string;
+};
+
+export type EmailMarketingsProps = {
+  domains: {
+    customer: {
+      Domain: {
+        name: string;
+      } | null;
+      id: string;
+      email: string | null;
+    }[];
+  }[];
+  campaign: {
+    name: string;
+    id: string;
+    customers: string[];
+    createdAt: Date;
+  }[];
+  subscription: {
+    plan: "STANDARD" | "PRO" | "ULTIMATE";
+    credits: number;
+  } | null;
+};
+
+export type CustomerTableProps = {
+  domains: {
+    customer: {
+      Domain: {
+        name: string;
+      } | null;
+      id: string;
+      email: string | null;
+    }[];
+  }[];
+  onSelect(email: string): void;
+  select: string[];
+  onId(id: string): void;
+  id?: string;
+};
+
+export type EditEmailProps = {
+  id: string;
+  onCreate(): void;
+  register: UseFormRegister<FieldValues>;
+  errors: FieldErrors<FieldValues>;
+  setDefault: UseFormSetValue<FieldValues>;
 };
 
 // End Components type

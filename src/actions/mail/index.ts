@@ -95,7 +95,6 @@ export const onCreateMarketingCampaign = async (name: string) => {
     }
   } catch (error) {
     console.log("[ON_CREATE_MARKETING_CAMPAIGN]", error);
-    return new NextResponse("Internal Error", { status: 500 });
   }
 };
 
@@ -118,7 +117,6 @@ export const onSaveEmailTemplate = async (
     }
   } catch (error) {
     console.log("[ON_SAVE_EMAIL_TEMPLATE]", error);
-    return new NextResponse("Internal Error", { status: 500 });
   }
 };
 
@@ -141,7 +139,6 @@ export const onAddCustomersToEmail = async (
     }
   } catch (error) {
     console.log("[ON_ADD_CUSTOMER_TO_EMAIL]", error);
-    return new NextResponse("Internal Error", { status: 500 });
   }
 };
 
@@ -204,7 +201,6 @@ export const onBulkMailer = async (email: string[], campaignId: string) => {
     }
   } catch (error) {
     console.log("[ON_BULK_MAILER]", error);
-    return new NextResponse("Internal Error", { status: 500 });
   }
 };
 
