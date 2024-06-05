@@ -241,7 +241,6 @@ export const onGetAllCustomerResponses = async (id: string) => {
     }
   } catch (error) {
     console.log("[ON_GET_ALL_CUSTOMER_RESPONSES]", error);
-    return new NextResponse("Internal Error", { status: 500 });
   }
 };
 
@@ -261,6 +260,5 @@ export const onGetEmailTemplate = async (id: string) => {
     }
   } catch (error) {
     console.log("[ON_GET_EMAIL_TEMPLATE]", error);
-    return new NextResponse("Internal Error", { status: 500 });
   }
 };

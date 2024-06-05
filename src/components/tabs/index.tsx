@@ -23,3 +23,5 @@ const TabsMenu = ({ triggers, children, className, button }: TabsProps) => {
     </Tabs>
   );
 };
+
+export default TabsMenu;
