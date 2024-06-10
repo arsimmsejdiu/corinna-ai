@@ -13,8 +13,8 @@ const LoginForm = (props: Props) => {
   } = useFormContext();
   return (
     <>
-      <h2 className="text-gravel md:text-4xl font-bold">Login</h2>
-      <p className="text-iridium md:text-sm">
+      <h2 className="text-gravel md:text-4xl font-bold dark:text-gray-400">Login</h2>
+      <p className="text-iridium md:text-sm dark:text-gray-400">
         You will receive a one time password
       </p>
       {USER_LOGIN_FORM.map((field) => (

@@ -1,5 +1,4 @@
 import React from "react";
-import { FieldValues, UseFormRegister } from "react-hook-form";
 import UserTypeCard from "./user-type-card";
 import { TypeSelectionFormProps } from "@/constants/types";
 

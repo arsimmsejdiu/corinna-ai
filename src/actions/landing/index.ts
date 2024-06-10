@@ -50,7 +50,6 @@ export const onGetBlogPosts = async () => {
     }
   } catch (error) {
     console.log("[ON_GET_BLOG_POSTS]", error);
-    return new NextResponse("Internal Error", { status: 500 });
   }
 };
 

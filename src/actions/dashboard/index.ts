@@ -29,7 +29,6 @@ export const getUserClients = async () => {
     }
   } catch (error) {
     console.log("[GET_USER_CLIENTS]", error);
-    return new NextResponse("Internal Error", { status: 500 });
   }
 };
 
@@ -62,7 +61,6 @@ export const getUserBalance = async () => {
     }
   } catch (error) {
     console.log("[GET_USER_BALANCE]", error);
-    return new NextResponse("Internal Error", { status: 500 });
   }
 };
 
@@ -99,7 +97,6 @@ export const getUserPlanInfo = async () => {
     }
   } catch (error) {
     console.log("[GET_USER_PLAN_INFO]", error);
-    return new NextResponse("Internal Error", { status: 500 });
   }
 };
 
@@ -130,7 +127,6 @@ export const getUserTotalProductPrices = async () => {
     }
   } catch (error) {
     console.log("[GET_USER_TOTAL_PRODUCT_PRICES]", error);
-    return new NextResponse("Internal Error", { status: 500 });
   }
 };
 
@@ -159,6 +155,5 @@ export const getUserTransactions = async () => {
     }
   } catch (error) {
     console.log("[GET_USER_TRANSACTIONS]", error);
-    return new NextResponse("Internal Error", { status: 500 });
   }
 };
