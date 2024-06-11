@@ -15,7 +15,7 @@ const Page = async (props: Props) => {
 
   return (
     <>
-      <InfoBar></InfoBar>
+      <InfoBar />
       <EmailMarketing
         campaign={campaigns?.campaign!}
         subscription={customers?.subscription!}
