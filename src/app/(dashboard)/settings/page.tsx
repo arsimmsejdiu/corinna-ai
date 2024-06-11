@@ -1,13 +1,22 @@
-import { onGetCurrentDomainInfo } from "@/actions/settings";
-import BotTrainingForm from '@/components/forms/settings/bot-training'
-// import SettingsForm from '@/components/forms/settings/form'
 import InfoBar from "@/components/infobar";
-// import ProductTable from '@/components/products'
-import { redirect } from "next/navigation";
+import BillingSettings from "@/components/settings/billing-settings";
+import ChangePassword from "@/components/settings/change-password";
+import DarkModeToggle from "@/components/settings/dark-mode";
 import React from "react";
 
-const Settings = () => {
-  return <div>Settings</div>;
+type Props = {}
+
+const Settings = (props: Props) => {
+  return (
+    <>
+      <InfoBar />
+      <div className="overflow-y-auto w-full chat-window flex-1 h-0 flex flex-col gap-10">
+        <BillingSettings />
+        <DarkModeToggle />
+        <ChangePassword />
+      </div>
+    </>
+  )
 };
 
 export default Settings;

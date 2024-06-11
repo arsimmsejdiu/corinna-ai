@@ -336,6 +336,29 @@ export type EditEmailProps = {
   setDefault: UseFormSetValue<FieldValues>;
 };
 
+export type DomainUpdateProps = {
+  name: string
+  register: UseFormRegister<FieldValues>
+  errors: FieldErrors<FieldValues>
+}
+
+export type GreetingMessageProps = {
+  message: string
+  register: UseFormRegister<FieldValues>
+  errors: FieldErrors<FieldValues>
+}
+
+export type SettingsFormProps = {
+  id: string
+  name: string
+  plan: 'STANDARD' | 'PRO' | 'ULTIMATE'
+  chatBot: {
+    id: string
+    icon: string | null
+    welcomeMessage: string | null
+  } | null
+}
+
 // End Components type
 //-----------------------------------------------------------
 // Chatbot
@@ -372,6 +395,16 @@ export type WindowChatbotProps = {
     >
   >;
 };
+
+export type EditChatbotIconProps = {
+  register: UseFormRegister<FieldValues>
+  errors: FieldErrors<FieldValues>
+  chatBot: {
+    id: string
+    icon: string | null
+    welcomeMessage: string | null
+  } | null
+}
 
 // End Chatbot type
 //-----------------------------------------------------------

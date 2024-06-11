@@ -43,3 +43,5 @@ const ChangePassword = (props: Props) => {
     </div>
   );
 };
+
+export default ChangePassword;

@@ -37,7 +37,7 @@ const MenuItem = ({
             !current
               ? "text-gray-500"
               : current == path
-              ? "bg-white font-bold text-black"
+              ? "bg-white font-bold p-2 transition animate-fade-in text-black"
               : "text-gray-500",
             "rounded-lg py-2 my-1"
           )}
