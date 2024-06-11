@@ -2,7 +2,6 @@
 
 import { client } from "@/lib/prisma";
 import { currentUser } from "@clerk/nextjs";
-import { NextResponse } from "next/server";
 import nodemailer from "nodemailer";
 
 export const onGetAllCustomers = async (id: string) => {
@@ -41,7 +40,6 @@ export const onGetAllCustomers = async (id: string) => {
     }
   } catch (error) {
     console.log("[ON_GET_ALL_CUSTOMERS]", error);
-    return new NextResponse("Internal Error", { status: 500 });
   }
 };
 
@@ -68,7 +66,6 @@ export const onGetAllCampaigns = async (id: string) => {
     }
   } catch (error) {
     console.log("[ON_GET_ALL_CAMPAIGNS]", error);
-    return new NextResponse("Internal Error", { status: 500 });
   }
 };
 
