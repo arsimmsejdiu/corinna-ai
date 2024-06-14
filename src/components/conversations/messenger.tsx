@@ -1,13 +1,14 @@
-'use client'
-import { useChatWindow } from '@/hooks/conversation/use-conversation'
-import React from 'react'
-import { Loader } from '../loader'
-import Bubble from '../chatbot/bubble'
-import { Input } from '../ui/input'
-import { Button } from '../ui/button'
-import { PaperclipIcon } from 'lucide-react'
+"use client";
+import { useChatWindow } from "@/hooks/conversation/use-conversation";
+import React from "react";
+import { Loader } from "../loader";
+import Bubble from "../chatbot/bubble";
+import { Input } from "../ui/input";
+import { Button } from "../ui/button";
+import { PaperclipIcon } from "lucide-react";
+import { EmojiPicker } from "../emoji-picker";
 
-type Props = {}
+type Props = {};
 
 const Messenger = (props: Props) => {
   const {
@@ -17,7 +18,7 @@ const Messenger = (props: Props) => {
     chatRoom,
     onHandleSentMessage,
     register,
-  } = useChatWindow()
+  } = useChatWindow();
   return (
     <div className="flex-1 flex flex-col h-0 relative">
       <div className="flex-1 h-0 w-full flex flex-col">
@@ -38,7 +39,9 @@ const Messenger = (props: Props) => {
                 />
               ))
             ) : (
-              <div className="flex flex-col justify-center items-center py-5 text-muted-foreground">No Chat Selected</div>
+              <div className="flex flex-col justify-center items-center py-5 text-muted-foreground">
+                No Chat Selected
+              </div>
             )}
           </div>
         </Loader>
@@ -49,24 +52,23 @@ const Messenger = (props: Props) => {
       >
         <div className="flex justify-between">
           <Input
-            {...register('content')}
+            {...register("content")}
             placeholder="Type your message..."
             className="focus-visible:ring-0 flex-1 p-0 focus-visible:ring-offset-0 bg-muted rounded-none outline-none border-none"
           />
-          <Button
-            type="submit"
-            className="mt-3 px-7"
-            disabled={!chatRoom}
-          >
+          <Button type="submit" className="mt-3 px-7" disabled={!chatRoom}>
             Send
           </Button>
         </div>
-        <span>
-          <PaperclipIcon className='text-muted-foreground' />
-        </span>
+        <button
+          type="button"
+          onClick={() => {}} // TODO: add the abillity to select a file or image
+        >
+          <PaperclipIcon className="text-muted-foreground cursor-pointer" />
+        </button>
       </form>
     </div>
-  )
-}
+  );
+};
 
-export default Messenger
+export default Messenger;

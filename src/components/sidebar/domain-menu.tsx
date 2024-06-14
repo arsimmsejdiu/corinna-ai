@@ -9,6 +9,7 @@ import UploadButton from "../upload-button";
 import { Button } from "../ui/button";
 import Link from "next/link";
 import Image from "next/image";
+import { ActionTooltip } from "../action-tooltip";
 
 type Props = {
   min?: boolean;
@@ -34,7 +35,9 @@ const DomainMenu = ({ domains, min }: Props) => {
           title="Add your business domain"
           onOpen={
             <div className="cursor-pointer text-gray-500 rounded-full border-2">
-              <Plus />
+              <ActionTooltip label="Add domain" align="center" side="right">
+                <Plus />
+              </ActionTooltip>
             </div>
           }
         >

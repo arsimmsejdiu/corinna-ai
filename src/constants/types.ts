@@ -337,27 +337,27 @@ export type EditEmailProps = {
 };
 
 export type DomainUpdateProps = {
-  name: string
-  register: UseFormRegister<FieldValues>
-  errors: FieldErrors<FieldValues>
-}
+  name: string;
+  register: UseFormRegister<FieldValues>;
+  errors: FieldErrors<FieldValues>;
+};
 
 export type GreetingMessageProps = {
-  message: string
-  register: UseFormRegister<FieldValues>
-  errors: FieldErrors<FieldValues>
-}
+  message: string;
+  register: UseFormRegister<FieldValues>;
+  errors: FieldErrors<FieldValues>;
+};
 
 export type SettingsFormProps = {
-  id: string
-  name: string
-  plan: 'STANDARD' | 'PRO' | 'ULTIMATE'
+  id: string;
+  name: string;
+  plan: "STANDARD" | "PRO" | "ULTIMATE";
   chatBot: {
-    id: string
-    icon: string | null
-    welcomeMessage: string | null
-  } | null
-}
+    id: string;
+    icon: string | null;
+    welcomeMessage: string | null;
+  } | null;
+};
 
 // End Components type
 //-----------------------------------------------------------
@@ -397,14 +397,25 @@ export type WindowChatbotProps = {
 };
 
 export type EditChatbotIconProps = {
-  register: UseFormRegister<FieldValues>
-  errors: FieldErrors<FieldValues>
+  register: UseFormRegister<FieldValues>;
+  errors: FieldErrors<FieldValues>;
   chatBot: {
-    id: string
-    icon: string | null
-    welcomeMessage: string | null
-  } | null
-}
+    id: string;
+    icon: string | null;
+    welcomeMessage: string | null;
+  } | null;
+};
 
 // End Chatbot type
 //-----------------------------------------------------------
+
+export type EmojiPickerProps = {
+  onChange: (value: string) => void;
+};
+
+export type ActionTooltipProps = {
+  label: string;
+  children: React.ReactNode;
+  side?: "top" | "right" | "bottom" | "left";
+  align?: "start" | "center" | "end";
+};
