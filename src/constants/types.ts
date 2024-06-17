@@ -447,6 +447,20 @@ export type PortalBookingDateFormProps = {
     | undefined;
 };
 
+export type PortalPaymentCheckoutProps = {
+  onBack(): void
+  products?:
+    | {
+        name: string
+        image: string
+        price: number
+      }[]
+    | undefined
+  amount?: number
+  onNext(): void
+  stripeId?: string
+}
+
 // End Components type
 //-----------------------------------------------------------
 // Chatbot
