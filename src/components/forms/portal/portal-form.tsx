@@ -3,7 +3,8 @@
 import { usePortal } from "@/hooks/portal/use-portal";
 import React, { useEffect } from "react";
 import { PortalFormProps } from "@/constants/types";
-import PortalSteps from './portal-steps'
+import PortalSteps from "./portal-steps";
+import { cn } from "@/lib/utils";
 
 const PortalForm = ({
   questions,
@@ -35,6 +36,50 @@ const PortalForm = ({
       onNext();
     }
   }, []);
+
+  return (
+    <form
+      className="h-full flex flex-col gap-10 justify-center"
+      onSubmit={onBookAppointment}
+    >
+      <PortalSteps
+        loading={loading}
+        slot={selectedSlot}
+        bookings={bookings}
+        onSlot={onSelectedTimeSlot}
+        date={date}
+        onBooking={setDate}
+        step={step}
+        type={type}
+        questions={questions}
+        error={errors}
+        register={register}
+        onNext={onNext}
+        products={products}
+        onBack={onPrev}
+        amount={amount}
+        stripeId={stripeId}
+      />
+      {(step == 1 || step == 2) && (
+        <div className="w-full flex justify-center">
+          <div className="w-[400px] grid grid-cols-2 gap-3">
+            <div
+              className={cn(
+                "rounded-full h-2 col-span-1",
+                step == 1 ? "bg-orange" : "bg-platinum"
+              )}
+            ></div>
+            <div
+              className={cn(
+                "rounded-full h-2 col-span-1",
+                step == 2 ? "bg-orange" : "bg-platinum"
+              )}
+            ></div>
+          </div>
+        </div>
+      )}
+    </form>
+  );
 };
 
 export default PortalForm;
