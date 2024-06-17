@@ -35,3 +35,5 @@ const QuestionsForm = ({
     </div>
   );
 };
+
+export default QuestionsForm

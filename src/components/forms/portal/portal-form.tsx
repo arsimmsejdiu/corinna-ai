@@ -3,6 +3,7 @@
 import { usePortal } from "@/hooks/portal/use-portal";
 import React, { useEffect } from "react";
 import { PortalFormProps } from "@/constants/types";
+import PortalSteps from './portal-steps'
 
 const PortalForm = ({
   questions,

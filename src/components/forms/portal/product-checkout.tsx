@@ -68,3 +68,5 @@ const PaymentCheckout = ({
     </Loader>
   );
 };
+
+export default PaymentCheckout;

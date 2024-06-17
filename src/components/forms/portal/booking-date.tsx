@@ -96,3 +96,5 @@ const BookAppointmentDate = ({
     </div>
   );
 };
+
+export default BookAppointmentDate;
