@@ -7,6 +7,7 @@ import { pricingCards } from "../../constants/landing-page";
 import Modal from "../modal";
 import SubscriptionForm from "../forms/settings/subscription-form";
 import Image from "next/image";
+import { ActionTooltip } from "../action-tooltip";
 
 type Props = {};
 
@@ -37,9 +38,11 @@ const BillingSettings = async (props: Props) => {
                   <div className="rounded-full border-2 p-1">
                     <Plus className="text-gray-400" />
                   </div>
-                  <CardDescription className="font-semibold">
-                    Upgrade Plan
-                  </CardDescription>
+                  <ActionTooltip label="Upgrade plan" align="center" side="bottom">
+                    <CardDescription className="font-semibold">
+                      Upgrade Plan
+                    </CardDescription>
+                  </ActionTooltip>
                 </CardContent>
               </Card>
             ) : (

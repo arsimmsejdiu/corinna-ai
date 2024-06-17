@@ -1,7 +1,7 @@
 import Image from "next/image";
 import React from "react";
 
-const PortalBanner = () => {
+export const PortalBanner = () => {
   return (
     <div className="w-full bg-muted flex justify-center py-5">
       <Image
@@ -18,5 +18,3 @@ const PortalBanner = () => {
     </div>
   );
 };
-
-export default PortalBanner;

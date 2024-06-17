@@ -74,6 +74,5 @@ export const onGetBlogPost = async (id: string) => {
     }
   } catch (error) {
     console.log("[ON_GET_BLOG_POST]", error);
-    return new NextResponse("Internal Error", { status: 500 });
   }
 };

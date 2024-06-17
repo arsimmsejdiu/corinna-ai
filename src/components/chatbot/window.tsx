@@ -81,10 +81,7 @@ export const BotWindow = forwardRef<HTMLDivElement, WindowChatbotProps>(
                 ref={ref}
               >
                 {chats.map((chat, key) => (
-                  <Bubble
-                    key={key}
-                    //   message={chat}
-                  />
+                  <Bubble key={key} message={chat} />
                 ))}
                 {onResponding && <Responding />}
               </div>
