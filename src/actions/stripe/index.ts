@@ -2,7 +2,6 @@
 
 import { client } from "@/lib/prisma";
 import { currentUser } from "@clerk/nextjs";
-import { NextResponse } from "next/server";
 import Stripe from "stripe";
 
 const stripe = new Stripe(process.env.STRIPE_SECRET!, {
@@ -31,7 +30,6 @@ export const onCreateCustomerPaymentIntentSecret = async (
     }
   } catch (error) {
     console.log("[ON_CREATE_CUSTOMER_PAYMENT_INTENT_SECRET]", error);
-    return new NextResponse("Internal Error", { status: 500 });
   }
 };
 
@@ -74,7 +72,6 @@ export const onUpdateSubscription = async (
     }
   } catch (error) {
     console.log("[ON_UPDATE_SUBSCRIPTION]", error);
-    return new NextResponse("Internal Error", { status: 500 });
   }
 };
 
@@ -108,6 +105,5 @@ export const onGetStripeClientSecret = async (
     }
   } catch (error) {
     console.log("[ON_GET_STRIPE_CLIENT_SECRET]", error);
-    return new NextResponse("Internal Error", { status: 500 });
   }
 };
