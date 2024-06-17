@@ -1,7 +1,6 @@
 "use server";
 
 import { client } from "@/lib/prisma";
-import { NextResponse } from "next/server";
 
 export const onGetDomainProductsAndConnectedAccountId = async (id: string) => {
   try {
@@ -42,6 +41,5 @@ export const onGetDomainProductsAndConnectedAccountId = async (id: string) => {
     }
   } catch (error) {
     console.log("[ON_GET_DOMAIN_PRODUCTS_AND_CONNECTED_ACCOUNT_ID]", error);
-    return new NextResponse("Internal Error", { status: 500 });
   }
 };
