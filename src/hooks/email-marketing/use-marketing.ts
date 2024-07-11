@@ -173,7 +173,7 @@ export const useAnswers = (id: string) => {
 
   useEffect(() => {
     onGetCustomerAnswers();
-  }, []);
+  }, [onGetCustomerAnswers]);
 
   return { answers, loading };
 };
@@ -197,7 +197,7 @@ export const useEditEmail = (id: string) => {
 
   useEffect(() => {
     onGetTemplate(id);
-  }, []);
+  }, [id]);
 
   return { loading, template };
 };

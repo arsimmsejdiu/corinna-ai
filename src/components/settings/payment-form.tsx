@@ -12,20 +12,20 @@ type PaymentFormProps = {
 };
 
 export const PaymentForm = ({ plan }: PaymentFormProps) => {
-    // const { processing, onMakePayment } = useCompletePayment(plan)
-    return (
-      <form
-        // onSubmit={onMakePayment}
-        className="flex flex-col gap-5"
-      >
-        <div>
-          <h2 className="font-semibold text-xl text-black">Payment Method</h2>
-          <CardDescription>Enter your card details</CardDescription>
-        </div>
-        <PaymentElement />
-        <Button type="submit">
-          <Loader loading={true}>Pay</Loader> // add to loading processing
-        </Button>
-      </form>
-    )
-  }
+  // const { processing, onMakePayment } = useCompletePayment(plan)
+  return (
+    <form
+      // onSubmit={onMakePayment}
+      className="flex flex-col gap-5"
+    >
+      <div>
+        <h2 className="font-semibold text-xl text-black">Payment Method</h2>
+        <CardDescription>Enter your card details</CardDescription>
+      </div>
+      <PaymentElement />
+      <Button type="submit">
+        <Loader loading={true}>Pay</Loader>
+      </Button>
+    </form>
+  );
+};

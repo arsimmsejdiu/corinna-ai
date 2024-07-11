@@ -54,7 +54,7 @@ export const useStripeCustomer = (amount: number, stripeId: string) => {
     onGetCustomerIntent(amount)
   }, [])
 
-  return { stripeSecret, loadForm }
+  return { stripeSecret, loadForm, amount, onGetCustomerIntent }
 }
 
 export const useCompleteCustomerPayment = (onNext: () => void) => {

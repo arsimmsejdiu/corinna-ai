@@ -19,7 +19,6 @@ export const StripeElements = ({ payment }: StripeElementsProps) => {
     (payment == "PRO" || payment == "ULTIMATE") && (
       <Loader loading={true}>
         {" "}
-        // add after creating loadForm
         <Elements
           stripe={StripePromise}
           options={
