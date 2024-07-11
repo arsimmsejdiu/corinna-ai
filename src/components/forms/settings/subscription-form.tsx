@@ -7,52 +7,52 @@ import { Button } from "@/components/ui/button";
 import React from "react";
 
 type Props = {
-    plan: 'STANDARD' | 'PRO' | 'ULTIMATE'
-  }
-  
-  const SubscriptionForm = ({ plan }: Props) => {
-    // const { loading, onSetPayment, payment, onUpdatetToFreTier } = useSubscriptions(plan)
-  
-    return (
-      <Loader loading={true}> // add after creating loading
-        <div className="flex flex-col gap-5">
-          <div className="flex flex-col gap-3">
-            <SubscriptionCard
-              title="STANDARD"
-              description="Perfect if you're just getting started with Corinna AI"
-              price="0"
-              payment={""} // add after creating payment
-              onPayment={() => {}} // add after creating onSetPayment
-              id="STANDARD"
-            />
-  
-            <SubscriptionCard
-              title="PRO"
-              description="Perfect if you're just getting started with Corinna AI"
-              price="15"
-              payment={""} // add after creating payment
-              onPayment={() => {}} // add after creating onSetPayment
-              id="PRO"
-            />
-  
-            <SubscriptionCard
-              title="ULTIMATE"
-              description="Perfect if you're just getting started with Corinna AI"
-              price="35"
-              payment={""} // add after creating payment
-              onPayment={() => {}} // add after creating onSetPayment
-              id="ULTIMATE"
-            />
-          </div>
-          {/* <StripeElements payment={payment} /> */}
-          {/* {payment === 'STANDARD' && (
+  plan: "STANDARD" | "PRO" | "ULTIMATE";
+};
+
+const SubscriptionForm = ({ plan }: Props) => {
+  // const { loading, onSetPayment, payment, onUpdatetToFreTier } = useSubscriptions(plan)
+
+  return (
+    <Loader loading={true}>
+      <div className="flex flex-col gap-5">
+        <div className="flex flex-col gap-3">
+          <SubscriptionCard
+            title="STANDARD"
+            description="Perfect if you're just getting started with Corinna AI"
+            price="0"
+            payment={""}
+            onPayment={() => {}}
+            id="STANDARD"
+          />
+
+          <SubscriptionCard
+            title="PRO"
+            description="Perfect if you're just getting started with Corinna AI"
+            price="15"
+            payment={""}
+            onPayment={() => {}}
+            id="PRO"
+          />
+
+          <SubscriptionCard
+            title="ULTIMATE"
+            description="Perfect if you're just getting started with Corinna AI"
+            price="35"
+            payment={""}
+            onPayment={() => {}}
+            id="ULTIMATE"
+          />
+        </div>
+        {/* <StripeElements payment={payment} /> */}
+        {/* {payment === 'STANDARD' && (
             <Button onClick={onUpdatetToFreTier}>
               <Loader loading={loading}>Confirm</Loader>
             </Button>
           )} */}
-        </div>
-      </Loader>
-    )
-  }
-  
-  export default SubscriptionForm
+      </div>
+    </Loader>
+  );
+};
+
+export default SubscriptionForm;

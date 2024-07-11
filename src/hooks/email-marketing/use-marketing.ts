@@ -173,7 +173,7 @@ export const useAnswers = (id: string) => {
 
   useEffect(() => {
     onGetCustomerAnswers();
-  }, [onGetCustomerAnswers]);
+  }, []);
 
   return { answers, loading };
 };
