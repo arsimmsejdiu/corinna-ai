@@ -19,11 +19,11 @@ const MenuItem = ({
           <Link
             onClick={onSignOut}
             className={cn(
-              "flex items-center gap-2 px-1 py-2 rounded-lg my-1",
+              "flex items-center gap-2 px-1 py-2 rounded-lg my-1 hover:bg-gray-200 hover:font-bold hover:text-black dark:hover:bg-white",
               !current
                 ? "text-gray-500"
                 : current == path
-                ? "bg-white font-bold text-black"
+                ? "bg-gray-200 font-bold text-black"
                 : "text-gray-500"
             )}
             href={path ? `/${path}` : "#"}
@@ -38,10 +38,11 @@ const MenuItem = ({
           <Link
             onClick={onSignOut}
             className={cn(
+              "flex items-center justify-center hover:bg-gray-200 hover:font-bold hover:text-black dark:hover:bg-white",
               !current
                 ? "text-gray-500"
                 : current == path
-                ? "bg-white font-bold p-2 transition animate-fade-in text-black"
+                ? "bg-gray-200 font-bold p-2 transition animate-fade-in text-black"
                 : "text-gray-500",
               "rounded-lg py-2 my-1"
             )}

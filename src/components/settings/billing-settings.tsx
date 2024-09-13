@@ -30,7 +30,7 @@ const BillingSettings = async (props: Props) => {
       <div className="lg:col-span-2 flex justify-start lg:justify-center ">
         <Modal
           title="Choose A Plan"
-          description="Tell us about yourself! What do you do? Let’s tailor your experience so it best suits you."
+          description="Tell us about yourself! What do you do? Let's tailor your experience so it best suits you."
           trigger={
             plan && plan === "STANDARD" ? (
               <Card className="border-dashed bg-cream border-gray-400 w-full cursor-pointer h-[270px] flex justify-center items-center">
