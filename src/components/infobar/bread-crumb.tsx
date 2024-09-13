@@ -17,6 +17,7 @@ const BreadCrumb = (props: Props) => {
     onSignOut,
     realtime,
   } = useSideBar();
+  
   return (
     <div className="flex flex-col p-2">
       <div className="flex gap-5 items-center">

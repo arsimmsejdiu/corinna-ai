@@ -12,6 +12,7 @@ import {
 } from "@/actions/settings";
 import { useToast } from "@/components/ui/use-toast";
 import {
+  AddProductProps,
   ChangePasswordProps,
   DomainSettingsProps,
   FilterQuestionsProps,
@@ -19,15 +20,21 @@ import {
 } from "@/constants/types";
 import { ChangePasswordSchema } from "@/schemas/auth.schema";
 import {
+  AddProductSchema,
   DomainSettingsSchema,
   FilterQuestionsSchema,
   HelpDeskQuestionsSchema,
 } from "@/schemas/settings.schema";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { UploadClient } from "@uploadcare/upload-client";
 import { useTheme } from "next-themes";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
+
+const upload = new UploadClient({
+  publicKey: process.env.NEXT_PUBLIC_UPLOAD_CARE_PUBLIC_KEY as string,
+})
 
 export const useThemeMode = () => {
   const { setTheme, theme } = useTheme();
@@ -246,5 +253,45 @@ export const useSettings = (id: string) => {
     loading,
     onDeleteDomain,
     deleting,
+  }
+}
+
+export const useProducts = (domainId: string) => {
+  const {toast} = useToast();
+  const [loading, setLoading] = useState<boolean>(false);
+  const {register, reset, handleSubmit, formState: {errors}} = useForm<AddProductProps>({resolver: zodResolver(AddProductSchema)});
+
+  const onCreateNewProduct = handleSubmit(async (value) => {
+    try {
+      setLoading(true)
+      const uploaded = await upload.uploadFile(value.image[0]);
+      const product = await onCreateNewDomainProduct(
+        domainId,
+        value.name,
+        uploaded.uuid,
+        value.price
+      )
+
+      if (product) {
+        toast({
+          title: 'Success',
+          description: product.message,
+        })
+        setLoading(false)
+      }
+    } catch (error: any) {
+      console.log(error)
+      toast({
+        title: 'Error',
+        description: error.message,
+      })
+    }
+  })
+
+  return {
+    register,
+    onCreateNewProduct,
+    errors,
+    loading,
   }
 }
